@@ -1,0 +1,17 @@
+org: venkatakireeti
+app: flagged-player-api
+service: flagged-player-api
+
+frameworkVersion: '3'
+
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-2
+
+functions:
+  rateHandler:
+    handler: handler.run
+    events:
+      - schedule: rate(30 minutes)
