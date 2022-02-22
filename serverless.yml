@@ -12,6 +12,13 @@ provider:
 
 functions:
   rateHandler:
+    name: flagPlayerAPI
     handler: handler.run
+    events:
+      - schedule: rate(30 minutes)
+
+  flagplayerRateHandler:
+    name: flagPlayer
+    handler: handler.slotRun
     events:
       - schedule: rate(30 minutes)
